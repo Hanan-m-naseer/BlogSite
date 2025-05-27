@@ -1,0 +1,28 @@
+# Django .gitignore 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Django stuff:
+*.sqlite3
+*.log
+/media/
+staticfiles/
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+
+# Environment variables
+.env
+
+# IDEs and OS
+.vscode/
+*.DS_Store
+
+# Migrations (optional to ignore)
+**/migrations/*.py
+!**/migrations/__init__.py
+

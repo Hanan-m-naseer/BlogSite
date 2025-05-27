@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% block content %}
+  <h2>All Blog Posts</h2>
+  {% for post in posts %}
+    <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+      <h3>{{ post.title }}</h3>
+      <p>By {{ post.author.first_name }} on {{ post.created_at|date:"F j, Y" }}</p>
+      <p>{{ post.content|truncatewords:30 }}</p>
+       
+      {% if post.image %}
+        <img src="{{ post.image.url }}" style="width: 100%; max-width: 400px;">
+      {% endif %}
+      <p>{{ post.content|truncatewords:30 }}</p><a href="{% url 'post_detail' post.pk %}">Read More</a>
+    </div>
+  {% empty %}
+    <p>No posts yet.</p>
+  {% endfor %}
+{% endblock %}
